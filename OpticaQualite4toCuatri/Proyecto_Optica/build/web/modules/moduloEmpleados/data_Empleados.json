@@ -1,0 +1,69 @@
+[    
+    {
+        "nombre": "Cristian Alejandro", 
+        "apellido_paterno": "Leyva", 
+        "apellido_materno" : "Collazo", 
+        "genero" : "Masculino", 
+        "rfc" : "HSSJ2311977W1", 
+        "telefono" : "4767061903", 
+        "telefono_movil" : "4761362462",
+        "correo_electronico" : "cristianleyvacr7@gmail.com", 
+        "numero_unico_empleado" : "8d097b2689a536dcbf61c21198a5e536c020ca7efa52e68fc561010ee1124d2a",
+        "estatus": "Activo",
+        "usuario": "CristianLeyva",
+        "contrasenia": "12345678"
+    },
+    {
+        "nombre": "Josue Armando", 
+        "apellido_paterno": "Rivera", 
+        "apellido_materno" : "Hernandez", 
+        "genero" : "Femenino", 
+        "rfc" : "PERM1902866D0", 
+        "telefono" : "4777882333", 
+        "telefono_movil" : "4774456652",
+        "correo_electronico" : "riverhernan@gmail.com", 
+        "numero_unico_empleado" : "5d097b5489a536dcbf61c21198a5e536c020ca7efa52e68fc561010ee1124d2a",
+        "estatus": "Activo",
+        "usuario": "riverHernan",
+        "contrasenia": "12345678"
+    },
+    {
+        "nombre": "Sergio Missael", 
+        "apellido_paterno": "Medrano", 
+        "apellido_materno" : "Nuñez", 
+        "genero" : "Masculino", 
+        "rfc" : "REMJ310179HGT0", 
+        "telefono" : "4773221456", 
+        "telefono_movil" : "4775032234",
+        "correo_electronico" : "SergioNuez@gmail.com", 
+        "numero_unico_empleado" : "8d097b2689a536dcbf61c21198a5e536c020ca7efa52e68fc561010ee1124d2a",
+        "estatus": "Activo",
+        "usuario": "SergioNuez",
+        "contrasenia": "12345678"
+    },
+    {
+        "nombre": "Arasely", 
+        "apellido_paterno": "Martinez", 
+        "apellido_materno" : "Hernandez", 
+        "genero" : "Femenino", 
+        "rfc" : "REMJ31017GDDT0", 
+        "telefono" : "4771062064", 
+        "telefono_movil" : "4772309898",
+        "correo_electronico" : "araselyMar@gmail.com", 
+        "numero_unico_cliente" : "8d097b2689a536dcbf61c21198a5e536c020ca7efa52e68fc561010ee1124d2a",
+        "estatus": "Activo"
+    },
+    {
+        "nombre": "Blanca", 
+        "apellido_paterno": "Guzman", 
+        "apellido_materno" : "Ibarra", 
+        "genero" : "Femenino", 
+        "rfc" : "GUZJ31017GDDT0", 
+        "telefono" : "477545445", 
+        "telefono_movil" : "4773684646",
+        "correo_electronico" : "blonGuz@gmail.com", 
+        "numero_unico_cliente" : "8d097b2689a536dcbf61c21198a5e536c020ca7efa52e68fc561010ee1124d2a",
+        "estatus": "Activo"
+    }
+
+]

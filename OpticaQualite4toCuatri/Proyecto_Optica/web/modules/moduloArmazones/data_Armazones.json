@@ -1,0 +1,36 @@
+[    
+    {
+        "nombre": "Cristian Alejandro", 
+        "Marca": "Leyva", 
+        "Modelo" : "Collazo", 
+        "color" : "Masculino", 
+        "dimensiones" : "HSSJ2311977W1", 
+        "existecnias" : "4767061903", 
+        "precio_venta" : "4761362462",
+        "precio_compra" : "cristianleyvacr7@gmail.com", 
+        "estatus": "Activo"
+    },
+    {
+         "nombre": "Cristian Alejandro", 
+        "Marca": "Leyva", 
+        "Modelo" : "Collazo", 
+        "color" : "Masculino", 
+        "dimensiones" : "HSSJ2311977W1", 
+        "existecnias" : "4767061903", 
+        "precio_venta" : "4761362462",
+        "precio_compra" : "cristianleyvacr7@gmail.com", 
+        "estatus": "Activo"
+    },
+    {
+         "nombre": "Cristian Alejandro", 
+        "Marca": "Leyva", 
+        "Modelo" : "Collazo", 
+        "color" : "Masculino", 
+        "dimensiones" : "HSSJ2311977W1", 
+        "existecnias" : "4767061903", 
+        "precio_venta" : "4761362462",
+        "precio_compra" : "cristianleyvacr7@gmail.com", 
+        "estatus": "Activo"
+    }
+
+]

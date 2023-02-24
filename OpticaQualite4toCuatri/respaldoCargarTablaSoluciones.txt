@@ -1,0 +1,22 @@
+export function cargarEM(data) {
+    soluciones = data;    
+    let contenidoTE = "";
+    for (let i=0;i<soluciones.length; i++) {
+        contenidoTE += "<tr onclick='moduloSoluciones.selectSoluciones("+i+");'>";
+        let estatus = soluciones[i].producto.estatus;
+        contenidoTE += "<td>" + estatus + "</td>";
+        let nombre =soluciones[i].producto.nombre+"<br>"+soluciones[i].producto.marca;
+        contenidoTE +="<td>"+nombre+"</td>";
+        let existencias =soluciones[i].producto.existencias;
+        contenidoTE +="<td>"+existencias+"</td>";
+        let precioCompra =soluciones[i].producto.precioCompra;
+        contenidoTE +="<td>"+precioCompra +"</td>";
+        let precioVenta =soluciones[i].producto.precioVenta;
+        contenidoTE += "<td>" + precioVenta + "</td>";
+        
+        //contenidoTE += "<td><button onclick='moduloSoluciones.activarSoluciones("+i+");'>Activar</button></td>";
+        ///Asì se pone un boton adentro de la fila!!! contenidoTE += "<td><button onclick='moduloSoluciones.deleteSoluciones("+i+");'>Eliminar</button></td>";
+        contenidoTE += "</tr>";
+    }
+    document.getElementById("tblSoluciones").innerHTML = contenidoTE;
+}

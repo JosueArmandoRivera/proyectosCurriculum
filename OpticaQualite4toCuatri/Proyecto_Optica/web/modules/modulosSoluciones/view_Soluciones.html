@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Cristian Estrada">
+        <meta name="date" content="11/07/2022">
+        <style>
+            .titulo{
+                background: #072040;
+                color: white;
+                text-align: center;
+                margin: 20px 0 30px 0
+            }
+            .titulo-contenido{
+                padding: 6px 0
+            }
+            .input input,select,textarea{
+                width: 100%;
+
+            }
+            .input textarea{
+                height: 100px;
+                resize: none;
+            }
+            .buscar-boton{
+                margin-left: 25px;
+                background: #072040;
+                color: white;
+                border: none;
+                font-size: 15px;
+                padding: 6px 45px;
+            }
+            .input-buscar{
+                width: 50%;
+            }
+            .color-tabla{
+                background: #072040;
+                color: white;
+            }
+            .botones{
+                transform: translateY(70px);
+                margin-bottom: 60px
+            }
+            .botones-posicion{
+                display:flex;
+                justify-content: space-between
+            }
+            .eliminar{
+                color: white;
+                background: red;
+                border: none;
+                font-size: 16px;
+                padding: 10px 20px;
+                cursor :pointer;
+            }
+            .modificar{
+                color: white;
+                background: #92d050;
+                border: none;
+                font-size: 16px;
+                padding: 10px 20px;
+                cursor: pointer;
+            }
+            .registrar{
+                display: flex;
+                justify-content: space-between;
+                padding-top: 20px
+            }
+            .btnsFormulario{
+                display: flex;
+                justify-content: space-between;
+                padding-top: 20px
+            }
+            .registrar button{
+                color: white;
+                background: #005386;
+                border: 1px solid #072040;
+                font-size: 16px;
+                padding: 10px 20px;
+                cursor: pointer
+            }
+            #tblAccesorios{
+                text-align: center;
+            }
+            #ids{
+                display:flex;
+            }
+            .tblSoluciones{
+                overflow-y:auto; 
+            }
+        </style>
+    </head>
+    <div class="container-fluid row d-flex">
+        <div class="titulo">
+            <div class="titulo-contenido">
+                <h1>SOLUCIONES</h1>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="row g-3 input">
+                <form action="" class="formulario" id="formulario">
+                    <div class="ids">
+                        <div class="col-lg-4 d-flex">
+                            <div>
+                                
+                                <input id="txtIdSolucion"  style="visibility:hidden">
+                            </div>
+                            <div>
+                                <input id="txtIdProducto"  style="visibility:hidden">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <br>
+                        <label for="txtCodigoBarras">Codigo Barras</label><br>
+                        <input id="txtCodigoBarras" type="text"  >
+                    </div>
+
+                    <div class="formulario__grupo" id="grupo__nombre">
+                        <label for="txtNombre">Nombre</label>
+                        <div class="formulario__grupo-input">
+                            <input id="txtNombre" type="text" >
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                    </div>
+
+
+                    <div class="contenedor">
+                        <div class="contenedor-50">
+                            <div>
+                                <label for="txtMarca">Marca</label><br>
+                                <input id="txtMarca" type="text" >
+                            </div>
+                        </div>
+                        <div class="contenedor-50">
+                            <div>
+                                <label for="txtExistencia">Existencias</label><br>
+                                <input id="txtExistencia" type="text" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contenedor">
+                        <div class="contenedor-50">
+                            <label for="txtPreCompra">Precio compra</label><br>
+                            <input id="txtPreCompra" type="text" >
+                        </div>
+                        <div class="contenedor-50">
+                            <label for="txtPreVenta">Precio venta</label><br>
+                            <input id="txtPreVenta" type="text" >
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="registrar">
+                <button onclick="moduloSoluciones.addSoluciones();" id="btnAdd">REGISTRAR</button>
+                <button onclick="moduloSoluciones.clean();" id="btnClean">CANCELAR</button>
+                <!-- comment <button onclick="moduloSoluciones.loadTabla();" >CARGAR TABLA</button>-->
+              
+            </div>
+            <div class="btnsFormulario">
+              <button class="modificar" onclick="moduloSoluciones.activarSoluciones();">ACTIVAR</button>
+                <button class="eliminar" onclick="moduloSoluciones.deleteSoluciones();" id="btnDelete">ELIMINAR</button>
+                <button class="modificar" onclick="moduloSoluciones.updateSoluciones();" id="btnUpdate">MODIFICAR</button>
+            </div>
+        </div>
+
+        <div class="col-lg-8" style="margin-bottom: 10px">
+            <div class="d-flex justify-content-end">
+                <input class="input-buscar" type="text" id="txtBusquedaSolucion" placeholder="Buscar soluciones">
+                <button class="buscar-boton" onclick="moduloSoluciones.buscarSolucion();">Buscar</button>
+            </div>
+            <table class="table table-hover tabla" style="margin-top: 30px">
+                <thead class="color-tabla">
+                    <tr>
+                        <th>Estatus</th>
+                        <th>Nombre</th>
+                        <th>Existencias</th>
+                        <th>Precio Compra</th>
+                        <th>Precio venta</th>
+                        <th><select id="txtEstado" class="form-select form-select-sm col-md-6">
+                                <option onclick="moduloSoluciones.CargarInactivos();">Ver inactivos</option>
+                                <option onclick="moduloSoluciones.loadTabla();">Ver activos</option></select>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="tblSoluciones" id="tblSoluciones">
+
+                </tbody>
+            </table>
+            <div class="botones">
+                <div class="botones-posicion">
+                    <!-- comment
+                    <button class="modificar" onclick="moduloSoluciones.activarSoluciones();">ACTIVAR</button>
+                    <button class="eliminar" onclick="moduloSoluciones.deleteSoluciones();" id="btnDelete">ELIMINAR</button>
+                    <button class="modificar" onclick="moduloSoluciones.updateSoluciones();" id="btnUpdate">MODIFICAR</button>
+ -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

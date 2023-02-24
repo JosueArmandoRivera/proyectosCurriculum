@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Optica Qualite</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Space Boys Solutions">
+        <meta name="date" content="03/08/2022 - en proceso">
+        <link rel="stylesheet" type="text/css" href="style/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="style/css/mycss.css"> 
+        <link rel="stylesheet" href="css/estilos.css">
+        <script src="style/js/bootstrap.bundle.min.js"></script>
+        <style>
+            body {
+                margin: 0;
+                font-family: 'Open Sans', sans-serif
+            }
+
+            body a {
+                text-decoration: none;
+                color: white
+            }
+            .background{
+                background: #072040;
+                color: white;
+            }
+            .header, .footer{
+                background: #074060;
+                font-family: sans-serif;
+            }
+            .header-contenido{
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 60px
+            }
+            .logo{
+                width: 7%;
+            }
+            .logo img{
+                width: 100%;
+                display: block;
+            }
+            .logo figure{
+                margin: 0;
+            }
+            .menu{
+                width: 81%;
+            }
+            .login{
+                width: 2.5%;
+            }
+            .login img{
+                width: 100%;
+                display: block;
+            }
+            .login figure{
+                margin: 0;
+            }
+            .menu ul{
+                display: flex;
+                justify-content: space-between;
+                margin: 0;
+            }
+            .menu li{
+                list-style: none;
+            }
+            .menu a{
+                text-decoration: none;
+                color: white;
+                
+            }
+            .menu a:hover{
+                color: white;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            .home h1{
+                text-align: center;
+                font-size: 50px;
+                color: #074060;
+                padding: 30px 0;
+            }
+            .home-contenido{
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .home-contenido-50{
+                width: 50%;
+            }
+            .home-contenido img{
+                width: 100%;
+                display: block;
+            }
+            .home-contenido-50 h2{
+                font-size: 40px;
+                color: #074060;
+            }
+            .home-contenido-50 p{
+                font-size: 19px;
+            }
+            .texto{
+                padding: 0 40px;
+            }
+            .img{
+                padding-top: 20px;
+            }
+            .img img{
+                width: 100%;
+                display: block;
+            }
+            .footer{
+                margin-top: 20px;
+                padding: 15px 0
+            }
+            .footer-contenedor{
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                color: white;
+            }
+            .logoSpace{
+                width: 11%;
+                display: flex;
+                align-items: center;
+            }
+            .logoSpace figure{
+                margin: 0;
+            }
+            .logoSpace img{
+                width: 100%;
+                display: block;
+            }
+            .opcionesMenu{
+                color: red;
+            }
+            .opcionesMenu :hover{
+                color: white;
+            }
+            .submenu{
+                width: max-content;
+                display: none;
+                padding: 20px 10px 20px 20px;
+                position: absolute;
+                background: #074060;
+                z-index: 1;
+                left: 23%;
+            }
+            .submenu a{
+                display: block;
+                margin-right: 20px;
+                margin-bottom: 10px;
+            }
+            .menu li{
+                list-style: none;
+            }
+            .header .menu ul li:hover .submenu {
+                display: block;
+            }
+            .submenu2{
+                width: max-content;
+                display: none;
+                padding: 20px 10px 20px 20px;
+                position: absolute;
+                background: #074060;
+                z-index: 1;
+                left: 56%;
+            }
+            .submenu2 a{
+                display: block;
+                margin-right: 20px;
+                margin-bottom: 10px;
+            }
+            .header .menu ul li:hover .submenu2 {
+                display: block;
+            }
+            .selected{
+                font-weight: 700;
+                font-size: 18px;
+            }
+            .fixed{
+                position: fixed;
+                display: inline-block;
+                right: 0;
+                top: 135px;
+            }
+            .fixed img{
+                height: 35px;
+                display: block;
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            <div class="header-contenido">
+                <div class="logo">
+                    <figure>
+                        <a href="index.html">
+                            <img src="images/bannersUotros/logoOpticaQualiteVistas.png" alt="">
+                        </a>
+                    </figure>
+                </div>
+                <nav class="menu">
+                    <ul>
+                        <li>
+                            <a class="opcionesMenu seleccionado" onclick="cargarModuloClientes();">Cliente</a>
+                        </li>
+                        <li>
+                            <a class="opcionesMenu">Producto</a>
+                            <div class="submenu">
+                                <a class="opcionesMenu seleccionado" onclick="cargarModuloAccesorios();">Accesorios</a>
+                                <a class="opcionesMenu seleccionado" onclick="cargarModuloSoluciones();">Soluciones</a>
+                                <a class="opcionesMenu seleccionado" onclick="cargarModuloArmazones();">Armazones</a>
+                                <a class="opcionesMenu seleccionado" onclick="cargarModuloLenteContacto();">Lente de contacto</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="opcionesMenu seleccionado" onclick="cargarModuloEmpleados();">Empleado</a>
+                        </li>
+                        <li>
+                            <a class="opcionesMenu seleccionado" onclick="cargarModuloGraduaciones();">Graduaciones</a>
+                        </li>
+                        <li>
+                            <a class="opcionesMenu seleccionado" onclick="cargarModuloExamen();">Examen</a>
+                        </li>
+                        <li>
+                            <a class="opcionesMenu">Presupuesto</a>
+                            <div class="submenu2">
+                                <a class="opcionesMenu seleccionado" onclick="cargarModuloLenteContacto();">Pre. Lente Contacto</a>
+                                <a class="opcionesMenu seleccionado" onclick="cargarModuloLenteArmazon();">Pre. Lente Armazón</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="opcionesMenu seleccionado" onclick="cargarModuloVenta();">Venta</a>
+                        </li>
+                        <li>
+                            <a class="opcionesMenu seleccionado" onclick="cargarModuloPagos();">Pago</a>
+                        </li>
+                        <li>
+                            <a class="opcionesMenu seleccionado" onclick="cargarModuloCompras();">Compras</a>
+                        </li>
+                        
+                        <li>
+                            <a class="opcionesMenu seleccionado" onclick="cargarModuloTratamientos();">Tratamientos</a>
+                        </li>
+                        <li>
+                            <a class="cerrarSesiion" onclick="cerrarSesion()">Cerrar sesión</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="login">
+                    <figure>
+                        <a onclick="cargarModuloLogin();">
+                            <img src="images/bannersUotras/login.png" alt="">
+                        </a>
+                    </figure>
+                </div>
+            </div>
+        </header>  <!-- comment 
+        <div class="fixed">
+            <img src="images/bannersUotras/faceIcono.png" alt="alt"/>
+            <img src="images/bannersUotras/instagram.png" alt="alt"/>
+            <img src="images/bannersUotras/whatsappIcono.png" alt="alt"/>
+        </div>-->
+        <div class="container-fluid" id="contenedorPrincipal">
+            <div class="home">
+                <h1>Optica Qualite</h1>
+                <div class="home-contenido">
+                    <div class="home-contenido-50">
+                        <img src="images/bannersUotros/otras1.jpg" alt="">
+                    </div>
+                    <div class="home-contenido-50">
+                        <img src="images/bannersUotros/otras2.jpg" alt="">
+                    </div>
+                </div>
+                <div class="home-contenido">
+                    <div class="home-contenido-50">
+                        <img src="images/bannersUotros/otras3.jpg" alt="">
+                    </div>
+                    <div class="home-contenido-50">
+                        <img src="images/bannersUotros/otras5.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-contenedor">
+                <div class="logoSpace">
+                    <p>Hecha por:</p>
+                    <figure>
+                        <img src="images/bannersUotras/Logo_Empresa.png" alt="">
+                    </figure>
+                </div>
+                <div class="copy">
+                    <p>Copyright &copy; to Space Boys 2022. All rights reserved.</p>
+                </div>
+                
+            </div>
+        </footer>
+        <script src="style/js/bootstrap.bundle.js"></script>
+        <script src="js/formulario.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/sweetalert2.all.min.js"></script>
+        <script>
+            $('.seleccionado').on('click', function(){
+            $('.seleccionado').removeClass('selected');
+            $(this).addClass('selected');
+            });
+        </script>
+        <script src="modules/controllerAcceso/ControllerAcceso.js" type="text/javascript"></script>
+    </body>
+</html>

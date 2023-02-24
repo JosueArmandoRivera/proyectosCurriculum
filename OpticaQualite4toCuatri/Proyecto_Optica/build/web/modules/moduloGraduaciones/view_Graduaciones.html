@@ -1,0 +1,172 @@
+<!-- Modulo de clientes -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Space Boys Solutions">
+        <meta name="date" content="11/07/2022">
+        <style>
+            .titulo{
+                background: #072040;
+                color: white;
+                text-align: center;
+                margin: 20px 0 30px 0
+            }
+            .titulo-contenido{
+                padding: 6px 0
+            }
+            .input input,select{
+                width: 100%;
+            }
+            .buscar-boton{
+                margin-left: 25px;
+                background: #072040;
+                color: white;
+                border: none;
+                font-size: 15px;
+                padding: 6px 45px;
+            }
+            .input-buscar{
+                width: 50%;
+            }
+            .color-tabla{
+                background: #072040;
+                color: white;
+            }
+            .botones{
+                transform: translateY(70px);
+                margin-bottom: 60px
+            }
+            .botones-posicion{
+                display:flex;
+                justify-content: space-between
+            }
+            .botones-posicion a{
+                border:1px solid #072040;
+                background:#fff;
+                color:#072040;
+                padding:12px 20px;
+                display:inline-block;
+            }
+            .botones-posicion a:hover{
+                background:#072040;
+                color:white;
+            }
+            .eliminar{
+                color: white;
+                background: red;
+                border: none;
+                font-size: 16px;
+                padding: 10px 20px;
+                cursor :pointer;
+            }
+            .modificar{
+                color: white;
+                background: #92d050;
+                border: none;
+                font-size: 16px;
+                padding: 10px 20px;
+                cursor: pointer;
+            }
+            .registrar{
+                display: flex;
+                justify-content: space-between;
+                padding-top: 20px
+            }
+            .registrar button{
+                color: white;
+                background: #005386;
+                border: 1px solid #072040;
+                font-size: 16px;
+                padding: 10px 20px;
+                cursor: pointer
+            }
+        </style>
+    </head>
+    <div class="container-fluid row d-flex">
+        <div class="titulo">
+            <div class="titulo-contenido">
+                <h1>GRADUACIONES</h1>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="row g-3 input">
+                <div>
+                    <label for="txtNumUnico">Número unico de la Graduacion</label><br>
+                    <input id="txtNumUnico" type="text"  readonly>
+                </div>
+                <div class="col-md-6">
+                    <label for="CilIzq">Cilindro_izq</label>
+                    <input id="CilIzq" type="text">
+                </div>
+                 <div class="col-md-6">
+                    <label for="CilDer">Cilindro_der</label>
+                    <input id="CilDer" type="text">
+                </div>
+                <div class="col-md-6">
+                    <label for="EsfeIzq">Esfera_izq</label>
+                    <input id="EsfeIzq" type="text">
+                </div>
+                 <div class="col-md-6">
+                    <label for="EsfeDer">Esfera_der</label>
+                    <input id="EsfeDer" type="text">
+                </div>
+                <div class="col-md-6">
+                    <label for="EjeIzq">Eje_izq</label>
+                    <input id="EjeIzq" type="text">
+                </div>
+                 <div class="col-md-6">
+                    <label for="EjeDer">Eje_der</label>
+                    <input id="EjeDer" type="text">
+                </div>
+                <div class="col-md-6">
+                    <label for="DipIzq">Dip_izq</label>
+                    <input id="DipIzq" type="text">
+                </div>
+                 <div class="col-md-6">
+                    <label for="DipDer">Dip_der</label>
+                    <input id="DipDer" type="text">
+                </div>
+            </div>
+            <div class="registrar">
+                <button onclick="moduloGraduacion.addGraduacion();" id="btnAdd">REGISTRAR</button>
+                <button onclick="moduloGraduacion.clean();" id="btnClean">CANCELAR</button>
+            </div>
+        </div>
+        <div class="col-lg-8" style="margin-bottom: 10px">
+            <div class="d-flex justify-content-end">
+                <input class="input-buscar" type="text" id="txtBusquedaCliente" placeholder="Buscar Graduación">
+                <button class="buscar-boton" onclick="moduloGraduacion.loadTabla();">Buscar</button>
+            </div>
+            <table class="table table-hover tabla" style="margin-top: 30px">
+                <thead class="color-tabla">
+                    <tr>
+                        <th>Cilindro_izq</th>
+                        <th>Cilindro_der</th>
+                        <th>Esfera_izq</th>
+                        <th>Esfera_der</th>
+                        <th>Eje_izq</th>
+                        <th>Eje_Der</th>
+                        <th>Dip_izq</th>
+                        <th>Dip_der</th>
+                        <th>Estátus</th>
+                    </tr>
+                </thead>
+                <tbody id="tblGraduaciones">
+
+                </tbody>
+            </table>
+            <div class="botones">
+                <div class="botones-posicion">
+                    <a href="">HACER EXAMEN</a>
+                    <button class="eliminar" onclick="moduloGraduacion.deleteTratamiento();" id="btnDelete">ELIMINAR</button>
+                    <button class="modificar" onclick="moduloGraduacion.updateGraduacion();" id="btnUpdate">MODIFICAR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

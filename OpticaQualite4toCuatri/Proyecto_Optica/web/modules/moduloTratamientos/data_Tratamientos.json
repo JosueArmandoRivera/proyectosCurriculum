@@ -1,0 +1,18 @@
+
+[    
+    {
+        "numero_unico_tratamientos": "8d097b2689a536dcbf61c21198a5e536c020ca7efa52e68fc561010ee1124d2a", 
+        "nombre": "Fotocromatico", 
+        "precio_venta" : "500", 
+        "precio_compra" : "300",
+         "estatus": "Activo"
+    },
+    {
+        "numero_unico_tratamientos": "8d097b2689a536dcbf61c21198a5e536c020ca7efa52e68fc561010ee1124d2a", 
+        "nombre": "Anti Reflejante", 
+        "precio_venta" : "300", 
+        "precio_compra" : "100",
+         "estatus": "Activo"
+    }
+
+]

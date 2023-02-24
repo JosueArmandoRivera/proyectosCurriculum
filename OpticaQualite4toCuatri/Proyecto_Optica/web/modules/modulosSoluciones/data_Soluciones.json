@@ -1,0 +1,33 @@
+[    
+    {
+        "numero_unico_accesorios" : "8d097b2689a536dcbf61c21198a5e536c020ca7efa52e68fc561010ee1124d2a",
+        "nombre": "Microfibra", 
+        "marca": "OAKLEY",
+        "existencia":"200",
+        "precio_compra" : "$300", 
+        "precio_venta" : "$500",
+        "descripcion":"TA CHIDO",
+        "estatus": "Activo"
+    },
+    {
+        "numero_unico_accesorios" : "8d097b2689a536dcbf61c21198a5e536c020ca7efa52e68fc561010ee1124d2a",
+        "nombre": "Sujetador de lentes", 
+        "marca": "OAKLEY", 
+        "existencia":"200",
+        "precio_compra" : "$40", 
+        "precio_venta" : "$102", 
+        "descripcion":"TA CHIDO",
+        "estatus": "Activo"
+    },
+    {
+        "numero_unico_accesorios" : "8d097b2689a536dcbf61c21198a5e536c020ca7efa52e68fc561010ee1124d2a",
+        "nombre": "Correa cordon", 
+        "marca": "OAKLEY", 
+        "existencia":"213",
+        "precio_compra" : "$20", 
+        "precio_venta" : "$56", 
+        "descripcion":"TA CHIDO",
+        "estatus": "Activo"
+    }
+
+]

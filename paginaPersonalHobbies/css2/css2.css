@@ -1,0 +1,86 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    font-family: 'Barlow', sans-serif;
+    font-family: 'Libre Franklin', sans-serif;
+    color: black;
+}
+#general{
+    /*
+    margin: auto;
+    margin-top: 50px;
+    width: 60%;
+    height: 800px;
+    background-color: yellow;
+    */
+    border: 1px solid #ccc;
+    margin: 0 auto;
+    margin-bottom: 70px;
+    width: 60%;
+    height: 1280px;
+    background: #fff;
+    padding: 10px;
+    margin-top: 60px;
+}
+
+#infoadicional{
+    padding: 4px;
+    float: right;
+    margin: 15px;
+    width: 200px;
+    height: 770px;
+    background-color:#fff;
+    transform: translateY(193px);
+
+}
+#nombre{
+    padding: 15px;
+}
+.info{
+    padding: 8px;
+    margin: 4px;
+}
+.nombre{
+    margin-left: 40px;
+    width: 100%;
+    size: 30px;   
+    color: #fff;
+}
+#foto{
+    padding: 10px;
+}
+#header{
+    display: flex;
+}
+.principal{
+    /*
+    display: flex;
+    width: 550px;
+    height: 180px;
+    margin: 15px;
+    background-color:#11538C;
+    text-emphasis: white;
+    */
+    background: #11538C;
+    padding: 8px;
+    color: white;
+    height: 150px;
+    width: 790px;
+}
+.experiencia{
+    width: 550px;
+    height: 580px;
+    background-color: #fff;
+    margin: 15px;
+}
+.fecha{
+    color:black;
+}
+.lugares{
+    margin: 4px;
+}
+.subtitulos{
+    color: #11538C;
+}

@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<!-- Modulo Lentes de Contacto -->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Space Boys Solutions">
+        <meta name="date" content="11/07/2022">
+        <style>
+            .titulo{
+                background: #072040;
+                color: white;
+                text-align: center;
+                margin: 20px 0 30px 0
+            }
+            .titulo-contenido{
+                padding: 6px 0
+            }
+            .input input,select{
+                width: 100%;
+            }
+            .buscar-boton{
+                margin-left: 25px;
+                background: #072040;
+                color: white;
+                border: none;
+                font-size: 15px;
+                padding: 6px 45px;
+            }
+            .input-buscar{
+                width: 50%;
+            }
+            .color-tabla{
+                background: #072040;
+                color: white;
+            }
+            .botones{
+                transform: translateY(70px);
+                margin-bottom: 60px
+            }
+            .botones-posicion{
+                display:flex;
+                justify-content: space-between
+            }
+            .botones-posicion a{
+                border:1px solid #072040;
+                background:#fff;
+                color:#072040;
+                padding:12px 20px;
+                display:inline-block;
+            }
+            .botones-posicion a:hover{
+                background:#072040;
+                color:white;
+            }
+            .eliminar{
+                color: white;
+                background: red;
+                border: none;
+                font-size: 16px;
+                padding: 10px 20px;
+                cursor :pointer;
+            }
+            .modificar{
+                color: white;
+                background: #92d050;
+                border: none;
+                font-size: 16px;
+                padding: 10px 20px;
+                cursor: pointer;
+            }
+            .registrar{
+                display: flex;
+                justify-content: space-between;
+                padding-top: 20px
+            }
+            .registrar button{
+                color: white;
+                background: #005386;
+                border: 1px solid #072040;
+                font-size: 16px;
+                padding: 10px 20px;
+                cursor: pointer
+            }
+        </style>
+    </head>
+    <div class="container-fluid row d-flex">
+        <div class="titulo">
+            <div class="titulo-contenido">
+                <h1>LENTES DE CONTACTO</h1>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="row g-3 input">
+                <div class="col-md-6">
+                    <input id="txtIdProducto" type="text" style="visibility:hidden">
+                </div>
+                 <div class="col-md-6">
+                    <input id="txtIdLenteContacto" type="text" style="visibility:hidden">
+                </div>                
+                <div class="col-md-6">
+                    <label for="txtCodigoBarras">Código Barras</label>
+                    <input id="txtCodigoBarras" type="text">
+                </div>
+                 <div class="col-md-6">
+                    <label for="txtNombre">Nombre</label>
+                    <input id="txtNombre" type="text">
+                </div>
+                <div class="col-md-6">
+                    <label for="txtMarca">Marca</label>
+                    <input id="txtMarca" type="text">
+                </div>
+                <div class="col-md-6">
+                    <label for="txtPrecioCompra">Precio Compra</label>
+                    <input id="txtPrecioCompra" type="text">
+                </div>
+                 <div class="col-md-6">
+                    <label for="txtPrecioVenta">Precio Venta</label>
+                    <input id="txtPrecioVenta" type="text">
+                </div>
+                <div class="col-md-6">
+                    <label for="txtExistencias">Existencias</label>
+                    <input id="txtExistencias" type="text">
+                </div>
+                 <div class="col-md-6">
+                    <label for="txtKeratometria">Keratometria</label>
+                    <input id="txtKeratometria" type="text">
+                </div>
+                 <div class="col-md-6">
+                    <label for="txtFotrografia">Fotografia</label>
+                    <input id="txtFotrografia" >
+                </div>
+                <!--                  <div class="col-md-6">
+                    <label for="txtFotrografia">Fotografia</label>
+                    
+                    <input id="txtFotrografia" accept="image/png,image/jpeg" type="file">
+                </div> -->
+            </div>
+            <div class="registrar">
+                <button onclick="moduloLenteContacto.addLenteContacto();" id="btnAdd">REGISTRAR</button>
+                <button onclick="moduloGraduacion.clean();" id="btnClean">CANCELAR</button>
+            </div>
+        </div>
+        <div class="col-lg-8" style="margin-bottom: 10px">
+            <div class="d-flex justify-content-end">
+                <input class="input-buscar" type="text" id="txtBusquedaLenteContacto" placeholder="Buscar Graduación">
+                <button class="buscar-boton" onclick="moduloLenteContacto.buscarLenteContacto();">Buscar</button>
+            </div>
+            <table class="table table-hover tabla" style="margin-top: 30px">
+                <thead class="color-tabla">
+                    <tr>
+                        <th>Estatus</th>
+                        <th>Nombre</th>
+                        <th>Precio Compra</th>
+                        <th>Precio Venta</th>
+                        <th>Existencias</th>
+                        <th>Keratometria</th>
+                        <th>Fotografia</th>
+                        <th><select id="txtEstado" class="form-select form-select-sm col-md-6">
+                                <option onclick="moduloLenteContacto.loadTabla();">Ver activos</option>
+                                <option onclick="moduloLenteContacto.CargarInactivos();">Ver inactivos</option></select>
+                        </th>
+
+                    </tr>
+                </thead>
+                <tbody id="tblLenteContacto">
+
+                </tbody>
+            </table>
+            <div class="botones">
+                <div class="botones-posicion">
+                    <a href="">HACER EXAMEN</a>
+                   
+                    <button class="eliminar" onclick="moduloLenteContacto.deleteLenteContacto();" id="btnDelete">ELIMINAR</button>
+                    <button class="eliminar" onclick="moduloLenteContacto.CargarInactivos();">Cargar Inactivos</button>
+
+                    <button class="modificar" onclick="moduloLenteContacto.updateLenteContacto();" id="btnUpdate">MODIFICAR</button>
+                    <button class="modificar" onclick="moduloLenteContacto.loadTabla();" id="btnLoadTabla">Cargar Tabla</button>
+               
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

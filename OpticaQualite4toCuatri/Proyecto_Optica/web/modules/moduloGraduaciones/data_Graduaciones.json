@@ -1,0 +1,32 @@
+[    
+    {
+        "Cilindro_izq": "3.2", 
+        "Cilindro_der": "3.0", 
+        "Esfera_izq": "1.0",
+        "Esfera_der": "0.9",
+        "Eje_izq":  "1.1",
+        "Eje_Der": "1.2",
+        "Dip_izq": ".4",
+        "Dip_der": ".6"
+    },
+    {
+        "Cilindro_izq": "3,2", 
+        "Cilindro_der": "3,0", 
+        "Esfera_izq": "1.0",
+        "Esfera_der": "0.9",
+        "Eje_izq":  "1.1",
+        "Eje_Der": "1.2",
+        "Dip_izq": ".4",
+        "Dip_der": ".6"
+    },
+    {
+        "Cilindro_izq": "3,2", 
+        "Cilindro_der": "3,0", 
+        "Esfera_izq": "1.0",
+        "Esfera_der": "0.9",
+        "Eje_izq":  "1.1",
+        "Eje_Der": "1.2",
+        "Dip_izq": ".4",
+        "Dip_der": ".6"
+    }
+]

@@ -1,0 +1,135 @@
+<!-- Modulo de clientes -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Cristian Estrada">
+        <meta name="date" content="11/07/2022">
+        <style>
+            .titulo{
+                background: #072040;
+                color: white;
+                text-align: center;
+                margin: 20px 0 30px 0
+            }
+            .titulo-contenido{
+                padding: 6px 0
+            }
+            .input input,select{
+                width: 100%;
+            }
+            .buscar-boton{
+                margin-left: 25px;
+                background: #072040;
+                color: white;
+                border: none;
+                font-size: 15px;
+                padding: 6px 45px;
+            }
+            .input-buscar{
+                width: 50%;
+            }
+            .color-tabla{
+                background: #072040;
+                color: white;
+            }
+            .botones{
+                transform: translateY(70px);
+                margin-bottom: 60px
+            }
+            .botones-posicion{
+                display:flex;
+                justify-content: space-between
+            }
+            .eliminar{
+                color: white;
+                background: red;
+                border: none;
+                font-size: 16px;
+                padding: 10px 20px;
+                cursor :pointer;
+            }
+            .modificar{
+                color: white;
+                background: #92d050;
+                border: none;
+                font-size: 16px;
+                padding: 10px 20px;
+                cursor: pointer;
+            }
+            .registrar{
+                display: flex;
+                justify-content: space-between;
+                padding-top: 20px
+            }
+            .registrar button{
+                color: white;
+                background: #005386;
+                border: 1px solid #072040;
+                font-size: 16px;
+                padding: 10px 20px;
+                cursor: pointer
+            }
+        </style>
+    </head>
+    <div class="container-fluid row d-flex">
+        <div class="titulo">
+            <div class="titulo-contenido">
+                <h1>TRATAMIENTOS</h1>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="row g-3 input">
+                <div>
+                    <label for="txtNumUnico">Número unico del Tratamientos</label><br>
+                    <input id="txtNumUnico" type="text"  readonly>
+                </div>
+                <div>
+                    <label for="txtNombre">Nombre</label><br>
+                    <input id="txtNombre" type="text" >
+                </div>
+                <div>
+                    <label for="txtPreCompra">Precio Compra</label><br>
+                    <input id="txtPreCompra" type="number" placeholder="$$">
+                </div>
+                <div>
+                    <label for="txtPreVenta">Precio Venta</label><br>
+                    <input id="txtPreVenta" type="number" placeholder="$$" >
+                </div>
+            </div>
+            <div class="registrar">
+                <button onclick="moduloTratamiento.addTratamiento();" id="btnAdd">REGISTRAR</button>
+                <button onclick="moduloTratamiento.clean();" id="btnClean">CANCELAR</button>
+            </div>
+        </div>
+        <div class="col-lg-8" style="margin-bottom: 10px">
+            <div class="d-flex justify-content-end">
+                <input class="input-buscar" type="text" id="txtBusquedaCliente" placeholder="Buscar Tratamiento">
+                <button class="buscar-boton" onclick="moduloTratamiento.loadTabla();">Buscar</button>
+            </div>
+            <table class="table table-hover tabla" style="margin-top: 30px">
+                <thead class="color-tabla">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>P  compra</th>
+                        <th>P  venta</th>
+                        <th>Estátus</th>
+                    </tr>
+                </thead>
+                <tbody id="tblTratamiento">
+
+                </tbody>
+            </table>
+            <div class="botones">
+                <div class="botones-posicion">
+                    <button class="eliminar" onclick="moduloTratamiento.deleteTratamiento();" id="btnDelete">ELIMINAR</button>
+                    <button class="modificar" onclick="moduloTratamiento.updateTratamiento();" id="btnUpdate">MODIFICAR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

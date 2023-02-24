@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    
+    <head>
+        <title>Modulo Ventas</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Josué Armando Rivera Hernández DSM502">
+        <meta name="date" content="15/02/2023">
+        <style>
+            .titulo{
+                background: #072040;
+                color: white;
+                text-align: center;
+                margin: 20px 0 30px 0
+            }
+            .titulo-contenido{
+                padding: 6px 0
+            }
+            .input input,select,textarea{
+                width: 100%;
+
+            }
+            .input textarea{
+                height: 100px;
+                resize: none;
+            }
+            .buscar-boton{
+                margin-left: 25px;
+                background: #072040;
+                color: white;
+                border: none;
+                font-size: 15px;
+                padding: 6px 45px;
+            }
+            .input-buscar{
+                width: 50%;
+            }
+            .color-tabla{
+                background: #072040;
+                color: white;
+            }
+            .botones{
+                transform: translateY(70px);
+                margin-bottom: 60px
+            }
+            .botones-posicion{
+                display:flex;
+                justify-content: space-between
+            }
+            .eliminar{
+                color: white;
+                background: red;
+                border: none;
+                font-size: 16px;
+                padding: 10px 20px;
+                cursor :pointer;
+            }
+            .modificar{
+                color: white;
+                background: #92d050;
+                border: none;
+                font-size: 16px;
+                padding: 10px 20px;
+                cursor: pointer;
+            }
+            .registrar{
+                display: flex;
+                justify-content: space-between;
+                padding-top: 20px
+            }
+            .btnsFormulario{
+                display: flex;
+                justify-content: space-between;
+                padding-top: 20px
+            }
+            .registrar button{
+                color: white;
+                background: #005386;
+                border: 1px solid #072040;
+                font-size: 16px;
+                padding: 10px 20px;
+                cursor: pointer
+            }
+            #tblAccesorios{
+                text-align: center;
+            }
+            #ids{
+                display:flex;
+            }
+            .tblSoluciones{
+                overflow-y:auto; 
+            }
+        </style>
+    </head>
+    <div class="container-fluid row d-flex">
+        <div class="titulo">
+            <div class="titulo-contenido">
+                <h1>VENTAS</h1>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <button class="modificar" onclick="moduloVentas.loadTablaVentas();" id="btnUpdate">CARGAR</button>
+        </div>
+        </div>
+        <div class="col-lg-8" style="margin-bottom: 10px">
+            <div class="d-flex justify-content-end">
+                <input class="input-buscar" type="text" id="txtBusquedaVentas" placeholder="Buscar productos">
+                <button class="buscar-boton" onclick="moduloVentas.buscarProducto();">Buscar</button>
+            </div>
+            <table class="table table-hover tabla" style="margin-top: 30px">
+                <thead class="color-tabla">
+                    <tr>
+                        <th>Código Barras</th>
+                        <th>Nombre</th>
+                        <th>Total</th>
+                        <th>Cantidad</th>
+                        <th>
+                            <!--<select id="txtEstado" class="form-select form-select-sm col-md-6">
+                                <option onclick="moduloSoluciones.CargarInactivos();">Ver inactivos</option>
+                                <option onclick="moduloSoluciones.loadTabla();">Ver activos</option></select> -->
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="tblSoluciones" id="tblVentas">
+
+                </tbody>
+            </table>
+            <table class="table table-hover tabla" style="margin-top: 30px">
+                <thead class="color-tabla">
+                    <tr>
+                        <th>Código Barras</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Descuento</th>
+                        <th>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="tblSoluciones" id="tblCarrito">
+
+                </tbody>
+            </table>
+            <button onclick="moduloVentas.generarCompra();">Comprar</button>
+            
+            <div class="botones">
+                <div class="botones-posicion">
+                    <!-- comment
+                    <button class="modificar" onclick="moduloSoluciones.activarSoluciones();">ACTIVAR</button>
+                    <button class="eliminar" onclick="moduloSoluciones.deleteSoluciones();" id="btnDelete">ELIMINAR</button>
+                    <button class="modificar" onclick="moduloSoluciones.updateSoluciones();" id="btnUpdate">MODIFICAR</button>
+ -->
+                </div>
+            </div>
+        </div>
+    <!-- comment </div>-->
+</body>
+</html>
+
